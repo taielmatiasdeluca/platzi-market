@@ -12,6 +12,9 @@ public class Categoria {
     private Integer idCategoria;
     private Boolean estado;
 
+    @OneToMany(mappedBy = "categoria")
+    private List<Producto> productos;
+
 
     private String descripcion;
 

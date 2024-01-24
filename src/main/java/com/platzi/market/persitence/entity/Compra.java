@@ -12,11 +12,18 @@ public class Compra {
     @Column("id_compra")
     private Integer idCompra;
 
+    @ManyToOne
+    @JoinColumn(name = "id_cliente",insertable = false,updatable = false)
+    private Cliente cliente;
+
     @Column("id_cliente")
     private String idCliente;
 
 
     private LocalDateTime fecha;
+
+    @OneToMany(mappedBy = "producto")
+    private List<ComprasProducto> productos;
 
     @Column("medio_pago")
     private String medioPago;
