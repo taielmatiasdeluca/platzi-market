@@ -2,13 +2,15 @@ package com.platzi.market.persitence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "categorias")
 public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column("id_categoria")
+    @Column(name = "id_categoria")
     private Integer idCategoria;
     private Boolean estado;
 

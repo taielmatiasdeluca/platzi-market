@@ -3,20 +3,21 @@ package com.platzi.market.persitence.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "compras")
 public class Compra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column("id_compra")
+    @Column(name = "id_compra")
     private Integer idCompra;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente",insertable = false,updatable = false)
     private Cliente cliente;
 
-    @Column("id_cliente")
+    @Column(name = "id_cliente")
     private String idCliente;
 
 
@@ -25,7 +26,7 @@ public class Compra {
     @OneToMany(mappedBy = "producto")
     private List<ComprasProducto> productos;
 
-    @Column("medio_pago")
+    @Column(name = "medio_pago")
     private String medioPago;
 
     private String comentario;

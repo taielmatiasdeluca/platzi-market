@@ -8,16 +8,16 @@ public class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column("id_producto")
+    @Column(name = "id_producto")
     private Integer idProducto;
     private String nombre;
-    @Column("id_categoria")
+    @Column(name = "id_categoria")
     private Integer idCategoria;
-    @Column("codigo_barras")
+    @Column(name = "codigo_barras")
     private String codigoBarras;
-    @Column("precio_venta")
+    @Column(name = "precio_venta")
     private Double precioVenta;
-    @Column("cantidad_stock")
+    @Column(name = "cantidad_stock")
     private Integer cantidadStock;
     private Boolean estado;
 
