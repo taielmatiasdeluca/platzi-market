@@ -13,11 +13,11 @@ public class Category {
         this.categoryId = categoryId;
     }
 
-    public String getCategoria() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategory(String categoria) {
         this.category = categoria;
     }
 

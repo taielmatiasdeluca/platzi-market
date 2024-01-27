@@ -9,6 +9,9 @@ public class Product {
     private boolean active;
     private Category category;
 
+
+
+
     public int getProductId() {
         return productId;
     }

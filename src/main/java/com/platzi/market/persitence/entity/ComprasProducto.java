@@ -1,23 +1,26 @@
-package com.platzi.market.persitence.entity;
+package com.platzi.market.persistence.entity;
 
+import com.platzi.market.persitence.entity.Producto;
 import jakarta.persistence.*;
+import com.platzi.market.persistence.entity.ComprasProductoPK;
+import com.platzi.market.persistence.entity.Compra;
 
 @Entity
 @Table(name = "compras_productos")
-public class ComprasProducto   {
+public class ComprasProducto {
     @EmbeddedId
-    private ComprasProductoPK id;
+    private com.platzi.market.persistence.entity.ComprasProductoPK id;
 
     private Integer cantidad;
     private Double total;
     private Boolean estado;
 
     @ManyToOne
-    @JoinColumn(name = "id_compra",insertable = false,updatable = false)
-    private Compra compra;
+    @JoinColumn(name = "id_compra", insertable = false, updatable = false)
+    private com.platzi.market.persistence.entity.Compra compra;
 
     @ManyToOne
-    @JoinColumn(name = "id_producto",insertable = false,updatable = false)
+    @JoinColumn(name = "id_producto", insertable = false, updatable = false)
     private Producto producto;
 
     public ComprasProductoPK getId() {
@@ -50,5 +53,21 @@ public class ComprasProducto   {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compra compra) {
+        this.compra = compra;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 }

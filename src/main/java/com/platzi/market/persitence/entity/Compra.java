@@ -1,5 +1,8 @@
-package com.platzi.market.persitence.entity;
+package com.platzi.market.persistence.entity;
 
+import com.platzi.market.persistence.entity.ComprasProducto;
+import com.platzi.market.persitence.entity.Cliente;
+import com.platzi.market.persitence.entity.Producto;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -8,28 +11,29 @@ import java.util.List;
 @Entity
 @Table(name = "compras")
 public class Compra {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_compra")
     private Integer idCompra;
 
-    @ManyToOne
-    @JoinColumn(name = "id_cliente",insertable = false,updatable = false)
-    private Cliente cliente;
-
     @Column(name = "id_cliente")
     private String idCliente;
 
-
     private LocalDateTime fecha;
-
-    @OneToMany(mappedBy = "producto")
-    private List<ComprasProducto> productos;
 
     @Column(name = "medio_pago")
     private String medioPago;
 
     private String comentario;
+    private String estado;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+    private Cliente cliente;
+
+    @OneToMany(mappedBy = "idProducto")
+    private List<Producto> productos;
 
     public Integer getIdCompra() {
         return idCompra;
@@ -79,8 +83,19 @@ public class Compra {
         this.estado = estado;
     }
 
-    private String estado;
+    public Cliente getCliente() {
+        return cliente;
+    }
 
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
+    public List<Producto> getProductos() {
+        return productos;
+    }
 
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
 }

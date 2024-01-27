@@ -1,17 +1,16 @@
 package com.platzi.market.persitence.entity;
 
 import jakarta.persistence.*;
-
+import com.platzi.market.persistence.entity.Compra;
 import java.util.List;
 
 @Entity
 @Table(name = "clientes")
 public class Cliente {
-    /*@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column("id")
     private Integer id;
-    */
+
     private String name;
     private String apellidos;
     private Integer celular;

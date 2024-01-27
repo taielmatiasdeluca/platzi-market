@@ -1,7 +1,6 @@
-package com.platzi.market.persitence.entity;
+package com.platzi.market.persistence.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 
@@ -11,7 +10,7 @@ public class ComprasProductoPK implements Serializable {
     private Integer idCompra;
 
     @Column(name = "id_producto")
-    private  Integer idProducto;
+    private Integer idProducto;
 
     public Integer getIdCompra() {
         return idCompra;
